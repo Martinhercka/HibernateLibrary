@@ -15,15 +15,13 @@ public class App
     {
 
         SessionFactory sf = HibernateUtil.getSessionFactory();
-        Session s = sf.openSession();
-        s.beginTransaction();
-
+        Session se = sf.openSession();
+        se.beginTransaction();
         Writer writer = new Writer();
         writer.setFirstName("Samo");
         writer.setLastName("Chalupka");
-
-        s.save(writer);
-        s.getTransaction().commit();
-        s.close();
+        se.save(writer);
+        se.getTransaction().commit();
+        se.close();
     }
 }
